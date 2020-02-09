@@ -4,7 +4,8 @@
 
     <test name="Exam">
         <classes>
-
+<class name="com.Register"></class>
+            <class name="com.LoginTest"></class>
         </classes>
     </test>
 </suite>
