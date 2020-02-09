@@ -2,6 +2,7 @@ package com;
 
 import com.PageObject.BasePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,6 +19,7 @@ public class TestBase {
     public WebDriver driver;
 
     @BeforeClass
+    @Step("Init WebDriver Chrome")
     public void setUpDriver() {
         WebDriverManager.chromedriver().setup();
 
@@ -27,10 +29,8 @@ public class TestBase {
 
 
     @AfterClass
+    @Step("Quit")
     public void tearDown() {
         driver.quit();
     }
-
-
-
 }

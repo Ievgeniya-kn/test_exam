@@ -1,5 +1,7 @@
-package com;
+package com.API;
 
+import com.API.User;
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -23,6 +25,7 @@ public class Register {
 
 
     @Test
+    @Step("Register User - POST")
     public void postNewSpeciality() {
 
         userToRegister.setUsername("Test User");

@@ -1,15 +1,14 @@
 package com;
 
+import com.API.Register;
+import com.API.User;
 import com.PageObject.BasePage;
 import com.PageObject.Cart;
 import com.PageObject.Login;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.util.Calendar;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -27,11 +26,13 @@ public class LoginTest extends TestBase {
         user = new User();
         basePage = new BasePage(driver);
         login = new Login(driver);
-
+        Register register = new Register();
+        register.postNewSpeciality();
 
     }
 
     @Test
+    @Step("Logged in")
     public void Login() {
         login.openBasePage();
         login.clickLoginBtn();
@@ -41,7 +42,8 @@ public class LoginTest extends TestBase {
     }
 
     @Test
-    public void addToCart() {
+    @Step("Open Catalogue")
+    public void openCataloque() {
         cart = new Cart(driver);
         cart.openCataloque();
     }

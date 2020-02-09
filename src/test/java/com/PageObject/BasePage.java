@@ -29,6 +29,7 @@ public class BasePage {
                 .until(ExpectedConditions.textToBe(By.xpath("//h2"), title));
     }
 
+    @Step("Wait until element {elementName} isn't clickable")
     protected WebElement waitUntilClickable(String elementName, By elementPath) {
         waitFor().withMessage(elementName + " not clickable")
                 .until(ExpectedConditions.elementToBeClickable(elementPath));

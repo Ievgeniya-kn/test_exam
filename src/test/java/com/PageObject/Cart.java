@@ -16,7 +16,6 @@ public class Cart extends BasePage {
     @Step("Open 'Cataloque'")
     public BasePage openCataloque() {
         WebElement catalogBtn = driver.findElement(openByCataloq);
-
         catalogBtn.click();
         return new BasePage(driver);
     }

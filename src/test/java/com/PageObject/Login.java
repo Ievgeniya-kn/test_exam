@@ -18,7 +18,7 @@ public class Login extends BasePage {
         super(driver);
     }
 
-    @Step("open page")
+    @Step("Open page")
     public void openBasePage() {
         goToUrl("","HOT THIS WEEK");
     }
